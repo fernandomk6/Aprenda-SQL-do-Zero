@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Join</h1>    
+    <p>União de informações de tabelas diferentes</p>
+    <section id="conceito">
+        <h2>Pense nessas perguntas</h2>
+        <ul>
+            <li>Em quais tabelas estão os dados que eu preciso?</li>
+            <li>Como as tabelas se ligam? </li>
+        </ul>
+        <h2>Como fazer um join?</h2>
+        <ul>
+            <li>Escreva o SELECT com o FROM de todas as tabelas que precisa</li>
+            <li>Adicione um apelido para cada tabela</li>
+            <li>Faça as ligações com cuidado</li>
+            <li>Adicione outras restrições se necessário</li>
+            <li>
+                <h3>Exemplo 1</h3>
+                <pre>
+                    SELECT livro.nome, autor.nome
+                    FROM livro, autor
+                    WHERE autor.id = livro.autor_id;
+                    
+                    <i>Ou, usando apelidos...</i>
+
+                    SELECT l.nome, a.nome
+                    FROM livro l, autor a
+                    WHERE a.id = l.autor_id;
+                </pre>
+                <hr>
+                <h3>Exemplo 2</h3>
+                <pre>
+                    SELECT l.titulo, e.nome
+                    FROM livro l, editora e
+                    WHERE e.id = l.editora_id;
+
+                    <i>
+                        Perceba que o WHERE é basicamente a relação que existe entre
+                        as duas tabelas, a sua ligação, como elas se ligam.
+                    </i>
+
+                    SELECT l.titulo "Titulo livro", e.nome "Nome da Editora"
+                    FROM livro l, editora e
+                    WHERE e.id = l.editora_id;
+                    
+                    <i>
+                        Neste exemplo acima apelidamos o titulo de cada coluna. Aspas duplas so são necessário caso hava mais de uma palavra.
+                    </i>
+
+                    SELECT l.titulo "Titulo do livro", a.nome "Autor", e.nome "Editora"
+                    FROM livro l, autor a, editora e
+                    WHERE a.id = l.autor_id
+                    AND e.id =l.editora_id;
+                    <i>
+                        Neste exemplo acima, buscamos dados de três tabelas diferentes
+                    </i>
+
+                    <strong>no WHERE sempre a chave primaria deve vir primeiro</strong>
+                    <em>Isso ira otimizar o seu select</em>
+
+                    SELECT l.titulo, e.nome
+                    FROM livro l, editora e
+                    WHERE e.id = l.editora_id
+                    AND e.estado = "SP";
+
+                    <em>Nesse exemplo, andicionamos mais uma condição</em>
+                </pre>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
