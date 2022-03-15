@@ -1,0 +1,7 @@
+select avg(precovenda)
+from livro;
+
+avg = avarege = media
+
+select avg(precovenda) as "Media"
+from livro;

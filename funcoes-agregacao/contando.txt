@@ -1,0 +1,9 @@
+select count(*)
+from tabela
+where condicao
+
+ex
+
+select count(*) as "Total de registros"
+from livro
+where editora = "bixozo editora";

@@ -1,0 +1,23 @@
+select count(*)
+from editora
+// conta todas as editora
+// retorna um numero apena
+// contendo o total;
+
+select estado, count(*) as "Total"
+from editora
+group by estado;
+// o group by agrupa por determinado
+// campo
+// ou seja, conta os estados
+
+select estado, count(*) as "Total"
+from editora
+group by estado
+heving count(*) < 30;
+
+// aqui o having filtra apenas
+// os estados que tenham mais de 
+// 30 registro
+// estamos contando as colunas
+

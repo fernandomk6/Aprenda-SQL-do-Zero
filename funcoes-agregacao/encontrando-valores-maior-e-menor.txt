@@ -1,0 +1,8 @@
+select max(precovenda)
+from livro;
+
+qual o maior valor da coluna precovenda
+da tabela livro.
+
+select max(id)
+from editora;
