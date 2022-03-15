@@ -1,0 +1,18 @@
+VIEW = visualização
+um atalho para um select
+salva um select para 
+poder ser reapoveitado
+
+criando a view
+	create view todosProdutos as
+	select * from produtos;
+usando a view
+	select * from todosProdutos;
+
+perceba que a view funciona como
+uma tabela "customizada"
+funciona exatamente como uma
+tabela normal
+
+excluindo uma view
+	drop view todosProdutos;

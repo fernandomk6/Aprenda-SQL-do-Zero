@@ -1,0 +1,26 @@
+create index idx_tabela (
+	coluna
+);
+
+create index idx_produto (
+	descricao
+);
+
+drop index idx_produto;
+
+Apenas crie indices
+em tabelas que recebam muitas
+consultas (selects)
+
+os indices servem
+para o banco não precisar
+ler a tabela toda
+ele vai vai buscar aquele indice (coluna)
+
+tabelas indexadas levam mais
+tempo para serem atualizadas
+
+deve ser criado index para oque
+vai ser buscado ou seja
+o que vai ser usado principalmente no
+where.
